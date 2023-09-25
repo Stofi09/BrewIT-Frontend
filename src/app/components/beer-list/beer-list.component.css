@@ -1,0 +1,45 @@
+.pagination {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
+  }
+  
+  .page-numbers {
+    display: flex;
+    gap: 0.5rem;
+    margin: 0 1rem;
+  }
+  
+  button {
+    cursor: pointer;
+    background-color: #eee;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 0.25rem;
+    transition: background-color 0.3s;
+  }
+  
+  button:hover {
+    background-color: #ddd;
+  }
+  
+  button:disabled {
+    cursor: not-allowed;
+    background-color: #f9f9f9;
+  }
+  
+  button.active {
+    background-color: #d4e157;
+  }
+  .active {
+    background-color: #007bff;
+    color: #ffffff;
+  }
+  .beer-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); 
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  

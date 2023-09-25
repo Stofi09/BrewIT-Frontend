@@ -1,0 +1,10 @@
+<div class="beer-list">
+    <app-beer-card *ngFor="let beer of beers" [beer]="beer"></app-beer-card>
+  </div>
+  
+  <div class="pagination">
+    <button (click)="previousPage()" [disabled]="currentPage === 1">Previous</button>
+    <button *ngFor="let page of displayedPages" (click)="goToPage(page)" [class.active]="currentPage === page">{{ page }}</button>
+    <button (click)="nextPage()" [disabled]="!hasNextPage">Next</button>
+  </div>
+  
