@@ -1,0 +1,10 @@
+.main-container {
+    text-align: center;
+    padding: 20px;
+}
+  
+.main-title {
+    font-size: 2.5em; 
+    margin-bottom: 20px; 
+    color: #333;
+}
