@@ -1,0 +1,55 @@
+.cart {
+    margin-top: 20px;
+}
+
+.table {
+    padding: 25px 0px;   
+}
+
+table {
+    width: 100%;
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 16px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+tr:hover {
+    background-color: #f5f5f5;
+}
+
+th {
+    background-color: #f0f0f0;
+}
+
+.card-actions {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+mat-icon {
+    color: var(--brand-color);
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+mat-icon:active { 
+    transform: scale(1.25);
+}
+
+.mat-elevation-z8 {
+    margin: 10px 0;
+    overflow: hidden;
+    background: white;
+    border-radius: 5px;
+    box-shadow: 0px 3px 1px -2px rgba(0, 0, 0, 0.2), 0px 2px 2px 0px rgba(0, 0, 0, 0.14), 0px 1px 5px 0px rgba(0, 0, 0, 0.12);
+}
+
+.no-data{
+    color:#f40808
+}

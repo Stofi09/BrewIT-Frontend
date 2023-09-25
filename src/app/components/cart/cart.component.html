@@ -1,1 +1,52 @@
-<p>cart works!</p>
+<div class="cart container">
+    <div class="title">
+        <h1>Your current order :</h1>
+    </div>
+    <div *ngIf="dataSource.length === 0" class="no-data">You haven't picked anything!</div>
+    <div class="table">
+        <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+
+          <ng-container matColumnDef="name">
+            <th mat-header-cell *matHeaderCellDef> Name </th>
+            <td mat-cell *matCellDef="let element"> {{element.beer.name}} </td>
+            <td mat-footer-cell *matFooterCellDef> Total Price </td>
+          </ng-container>
+          
+          <ng-container matColumnDef="quantity">
+            <th mat-header-cell *matHeaderCellDef> Quantity </th>
+            <td mat-cell *matCellDef="let element"> {{element.count}} </td>
+            <td mat-footer-cell *matFooterCellDef> </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="price">
+            <th mat-header-cell *matHeaderCellDef> Price </th>
+            <td mat-cell *matCellDef="let element"> {{element.price}} </td>
+            <td mat-footer-cell *matFooterCellDef> </td>
+          </ng-container>
+  
+          <ng-container matColumnDef="totalPrice">
+            <th mat-header-cell *matHeaderCellDef> Total Price </th>
+            <td mat-cell *matCellDef="let element"> {{element.totalPrice | currency:'GBP':'symbol':'1.2-2'}} </td>
+            <td mat-footer-cell *matFooterCellDef> {{totalPrice | currency:'GBP':'symbol':'1.2-2'}} </td>
+          </ng-container>
+          
+          <ng-container matColumnDef="actions">
+            <th mat-header-cell *matHeaderCellDef> Actions </th>
+            <td mat-cell *matCellDef="let element">
+              <mat-icon (click)="decreaseCount(element)">remove_circle</mat-icon>
+              <mat-icon (click)="addToCart(element)">add_circle</mat-icon>
+            </td>
+            <td mat-footer-cell *matFooterCellDef>
+              <button mat-icon-button [disabled]="!dataSource || dataSource.length === 0"  (click)="placeOrder()" title="Send order">
+                <mat-icon>local_shipping</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+  
+          <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          <tr mat-footer-row *matFooterRowDef="displayedColumns"></tr>
+        </table>
+    </div>
+  </div>
+  
