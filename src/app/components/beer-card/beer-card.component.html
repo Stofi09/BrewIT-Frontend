@@ -1,0 +1,17 @@
+<div class="beer-card">
+    <div class="card-face" [ngClass]="{'is-flipped': showDescription}" (click)="toggleDescription()">
+      <div class="card-front">
+        <img [src]="beer.image_url" alt="{{beer.name}}" onerror="this.onerror=null; this.src='path-to-fallback-image';" />
+        <h3>{{beer.name | truncate:20:"..."}}</h3>
+      </div>
+      <div class="card-back">
+        <p>{{ beer.description | truncate }}</p>
+      </div>
+    </div>
+    <div class="card-actions">
+      <mat-icon (click)="decreaseCount(beer.id)">remove_circle</mat-icon>
+      <span> {{ cartService.getItemCount(beer.id) }} </span>
+      <mat-icon (click)="addToCart(beer)">add_circle</mat-icon>
+    </div>
+</div>
+  
