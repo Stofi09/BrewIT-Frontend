@@ -18,6 +18,7 @@ export class OrderService {
       items: cartItems.map(item => ({
         beerId: item.beer.id,
         beerName: item.beer.name,
+        
         count: item.count,
         totalPrice: item.count * item.beer.abv
       }))
