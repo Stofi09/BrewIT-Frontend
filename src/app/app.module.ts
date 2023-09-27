@@ -18,6 +18,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { MatTableModule } from '@angular/material/table';
     BeerCardComponent,
     CartComponent,
     TruncatePipe,
-    BeerListComponent
+    BeerListComponent,
+    LoginComponent
   ],
   imports: [
     MatDialogModule,FormsModule,
