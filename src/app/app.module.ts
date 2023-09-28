@@ -20,6 +20,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
+import { RegisterComponent } from './components/register/register.component';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { MatTableModule } from '@angular/material/table';
     TruncatePipe,
     BeerListComponent,
     LoginComponent,
+    RegisterComponent,
     
   ],
   imports: [

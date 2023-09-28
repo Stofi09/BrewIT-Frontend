@@ -14,4 +14,9 @@ export class AuthService {
     const url = `${this.apiUrl}/login`;
     return this.http.post(url, { username, password });
   }
+
+  register(name: string, email: string,password: string): Observable<any> {
+    const url = `${this.apiUrl}/register`;
+    return this.http.post(url, { name, email,password });
+  }
 }
