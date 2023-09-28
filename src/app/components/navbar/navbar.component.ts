@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, Output, EventEmitter } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { LoginComponent } from '../login/login.component';
+import { UserService } from 'src/app/services/user.service';
 
 @Component({
   selector: 'app-navbar',
@@ -8,9 +9,13 @@ import { LoginComponent } from '../login/login.component';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
+  @Output() userLoggedIn = new EventEmitter<string>();
   isLoggedIn = false;
 
-  constructor(public dialog: MatDialog) {}
+  constructor(
+    public dialog: MatDialog,
+    public userService: UserService
+  ) {}
 
   openLoginDialog(): void {
     const dialogRef = this.dialog.open(LoginComponent, {
@@ -18,7 +23,9 @@ export class NavbarComponent {
     });
   
     dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
+      if (result) {
+        this.userService.setUser(result);
+      }
     });
   }
 

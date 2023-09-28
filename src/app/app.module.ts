@@ -10,6 +10,8 @@ import { BeerCardComponent } from './components/beer-card/beer-card.component';
 import { CartComponent } from './components/cart/cart.component';
 import { TruncatePipe } from './utility/truncate.pipe';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './components/login/login.component';
+
 //Material
 import { MatIconModule } from '@angular/material/icon';
 import { BeerListComponent } from './components/beer-list/beer-list.component';
@@ -18,7 +20,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatTableModule } from '@angular/material/table';
-import { LoginComponent } from './components/login/login.component';
+
 
 @NgModule({
   declarations: [
@@ -29,7 +31,8 @@ import { LoginComponent } from './components/login/login.component';
     CartComponent,
     TruncatePipe,
     BeerListComponent,
-    LoginComponent
+    LoginComponent,
+    
   ],
   imports: [
     MatDialogModule,FormsModule,

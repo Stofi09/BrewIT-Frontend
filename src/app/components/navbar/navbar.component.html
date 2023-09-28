@@ -1,7 +1,7 @@
 <nav class="navbar">
     <div class="container">
         <a class="active" href="#">BrewIT</a>
-        <a (click)="openLoginDialog()" *ngIf="!isLoggedIn">Login</a>
+        <a (click)="openLoginDialog()" *ngIf="(userService.user$ | async) === null">Login</a>
         <div class="navbar-right">
         <a routerLink="/cart">View Cart</a>
         </div>
